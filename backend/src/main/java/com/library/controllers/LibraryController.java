@@ -11,10 +11,10 @@ import java.util.List;
 @RequestMapping("/library")
 public class LibraryController {
 
-    @Autowired
+    @Autowired //permite que spring maneje los objetos
     private LibraryService libraryService;
 
-    @GetMapping("/")
+    @GetMapping("/") //
     public List<Library> getAllLibraries() {
         return libraryService.getAllLibraries();
     }
