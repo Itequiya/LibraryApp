@@ -1,5 +1,4 @@
 package com.library.controllers;
-
 import com.library.model.Library;
 import com.library.service.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ public class LibraryController {
     @Autowired //permite que spring maneje los objetos
     private LibraryService libraryService;
 
-    @GetMapping("/") //
+    @GetMapping("/All") //
     public List<Library> getAllLibraries() {
         return libraryService.getAllLibraries();
     }

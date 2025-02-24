@@ -31,7 +31,7 @@ public class LibraryRepository {
 
     public Library save(Library library) {
         String addressSql = "INSERT INTO address (country, city, state, street, zip_code) VALUES (?, ?, ?, ?, ?)";
-        KeyHolder keyHolder = new GeneratedKeyHolder();
+        KeyHolder addresskeyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(addressSql, Statement.RETURN_GENERATED_KEYS);
@@ -41,14 +41,26 @@ public class LibraryRepository {
             ps.setString(4, library.getAddress().getStreet());
             ps.setString(5, library.getAddress().getZipCode());
             return ps;
-        }, keyHolder);
+        }, addresskeyHolder);
 
-        long addressId = keyHolder.getKey().longValue();
+        long addressId = addresskeyHolder.getKey().longValue();
 
         String librarySql = "INSERT INTO library (name, address_id) VALUES (?, ?)";
-        jdbcTemplate.update(librarySql, library.getName(), addressId);
+        KeyHolder libraryKeyHolder = new GeneratedKeyHolder();
 
+        jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(librarySql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, library.getName());
+            ps.setLong(2, addressId);
+            return ps;
+        }, libraryKeyHolder);
+
+        long libraryId = libraryKeyHolder.getKey().longValue();
+
+        // Asignar los IDs generados a los objetos
+        library.setId(libraryId);
         library.getAddress().setId(addressId);
+
         return library;
     }
 
