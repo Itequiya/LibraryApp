@@ -8,50 +8,45 @@ import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
-import com.library.model.Book;
-import java.util.List;
+
 @Repository
 public class UserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public List<User> findAll() {
-        String sql = "SELECT u.id, u.title, b.library_id, b.author, b.pages, b.editorial " +
-                "FROM book b ";
-        return jdbcTemplate.query(sql, new BookRowMapper());
+        String sql = "SELECT u.id, u.role_id, u.name, u.lastname, u.mail, u.phone " +
+                "FROM user u ";
+        return jdbcTemplate.query(sql, new UserRowMapper());
     }
-    public Book findByTitle(String title) {
-        String sql = "SELECT b.id, b.title, b.library_id, b.author, b.pages, b.editorial " +
-                "FROM book b  WHERE b.title = ?";
-        return jdbcTemplate.queryForObject(sql, new BookRowMapper(),title);
+    public User findByName(String name, String lastname) {
+        String sql = "SELECT u.id, u.role_id, u.name, u.lastname, u.mail, u.phone " +
+                "FROM user u  WHERE u.name = ? and u.lastname = ?";
+        return jdbcTemplate.queryForObject(sql, new UserRowMapper(),name, lastname);
     }
 
-    public Book save(Book book) {
-        String bookSql = "INSERT INTO book (title, author, pages, editorial, library_id) VALUES (?, ?, ?, ?, ?)";
-        KeyHolder bookkeyHolder = new GeneratedKeyHolder();
+    public User addUser(User user) {
+        String userSql = "INSERT INTO user (role_id, name, lastname, mail, phone) VALUES (?,?, ?, ?, ?)";
+        KeyHolder userkeyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(connection -> {
-            PreparedStatement ps = connection.prepareStatement(bookSql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, book.getTitle());
-            ps.setString(2, book.getAuthor());
-            ps.setInt(3, book.getPages());
-            ps.setString(4, book.getEditorial());
-            ps.setLong(5,book.getLibrary_id());
+            PreparedStatement ps = connection.prepareStatement(userSql, Statement.RETURN_GENERATED_KEYS);
+            ps.setLong(1, user.getRole_id());
+            ps.setString(2, user.getName());
+            ps.setString(3, user.getLastname());
+            ps.setString(4, user.getMail());
+            ps.setString(5,user.getPhone());
             return ps;
-        }, bookkeyHolder);
-        long bookId = bookkeyHolder.getKey().longValue();
+        }, userkeyHolder);
+        long userId = userkeyHolder.getKey().longValue();
         // Asignar los IDs generados a los objetos
-        book.setId(bookId);
-        return book;
+        user.setId(userId);
+        return user;
     }
 
-    public void deleteByTitle(String title) {
-        String getBookIdSql = "SELECT id FROM book WHERE title = ? limit 1";
-        Long BookId = jdbcTemplate.queryForObject(getBookIdSql, Long.class, title);
-        String deleteCopySql = "DELETE FROM copy WHERE book_id = ?";
-        jdbcTemplate.update(deleteCopySql, BookId);
-        String deleteBookSql = "DELETE FROM book WHERE title = ?";
-        jdbcTemplate.update(deleteBookSql, title);
+    public void deleteUser(Long id) {
+        String deleteCopySql = "DELETE FROM user WHERE id = ?";
+        jdbcTemplate.update(deleteCopySql, id);
     }
 
 }
