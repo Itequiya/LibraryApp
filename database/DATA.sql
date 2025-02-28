@@ -143,6 +143,5 @@ WHERE id=10;
 USE library;
 SELECT * FROM library;
 
-
- 
+SELECT u.id, u.role_id, u.name, u.lastname, u.mail, u.phone  FROM user u 
 

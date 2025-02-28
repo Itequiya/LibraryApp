@@ -1,5 +1,6 @@
 package com.library.repository;
 import com.library.model.Book;
+import com.library.model.Loan;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,4 +18,5 @@ public class BookRowMapper implements RowMapper<Book>  {
 
         );
     }
+
 }
