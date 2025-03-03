@@ -1,8 +1,7 @@
 package com.library.controllers;
 import com.library.model.Book;
-import com.library.model.Library;
-import com.library.service.LibraryService;
 import com.library.service.BookService;
+import com.library.service.CopyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +13,10 @@ import java.util.List;
 public class BookController {
     @Autowired
     private BookService bookService;
+    @Autowired
+    private CopyService copyService;
 
-    @GetMapping("/All") //
+    @GetMapping("/all") //
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
@@ -24,12 +25,16 @@ public class BookController {
         return bookService.getBookByTitle(title);
     }
 
-    @PostMapping("/AddBook")
+    @PostMapping("/addBook")
     public Book AddBook(@RequestBody Book book){
         return bookService.AddBook(book);
     }
     @DeleteMapping("/deleteBook")
     public void deleteBook(@RequestParam String title){
         bookService.DeleteBook(title);
+    }
+    @GetMapping("/availableCopies")
+    public Integer getAvailableCopies(@RequestParam("bookId") Long bookId){
+        return copyService.getAvailable(bookId);
     }
 }
