@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class LoanService {
@@ -29,8 +30,20 @@ public class LoanService {
         return loan;
     }
 
-    public void returnBook (Long loan_id, LocalDate return_date){
-      loanRepository.returnBook(loan_id, return_date);
-        copyService.changeStatus(loan.getCopy_id(), LOAN_ACTIVE_STATUS_ID);
+    public Long getCopyIdByLoanId (Long loanId){
+        return loanRepository.getCopyIdByLoanId (loanId);
     }
+
+    public void finishLoan(Long loan_id, LocalDate return_date){
+        Long copyId = getCopyIdByLoanId(loan_id);
+        loanRepository.finishLoan(loan_id, return_date);
+        copyService.changeStatus(copyId, LOAN_ACTIVE_STATUS_ID);
+    }
+    public List <Loan> getLoanByUser (Long userId){
+        return loanRepository.getLoanByUser(userId);
+    }
+    public List<Loan> getLoansBetweenDates(LocalDate startDate, LocalDate endDate) {
+        return loanRepository.getLoansBetweenDates(startDate, endDate);
+    }
+
 }

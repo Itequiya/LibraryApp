@@ -2,6 +2,7 @@ drop database if exists library;
 CREATE database library;
 USE library;
 
+
 CREATE TABLE library (
 id INT auto_increment primary key,
 name VARCHAR(50) not null,
