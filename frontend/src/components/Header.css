@@ -1,0 +1,64 @@
+
+.Header {
+    position: fixed;
+    top: 0; /* Stick it to the top */
+    max-height: 70px;
+    width: 100vw;
+  
+    display: grid;
+    grid-template-areas: "logo nav";
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    /* Cosmetics */
+    background-color: #eef4df ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+  }
+  .nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 7rem;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-list li {
+    display: inline;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-list a:hover {
+    color: #40521f;
+  }
+
+  .search-container {
+    margin-left: 60rem; /* Espacio entre la búsqueda y los elementos de la nav */
+  }
+  
+  .search-input {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: 1px solid #e9dbc7;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #40521f;
+  }
+  
+

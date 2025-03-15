@@ -1,9 +1,8 @@
+import "./Logo.css";
 const Logo = () => {
-    return (
-      <div className="logo">
-        <h1>Librería</h1>
-      </div>
-    );
+    
+      return <h1 className="logo">Itéquiya</h1>;
+    
 };
   
 export default Logo;

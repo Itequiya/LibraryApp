@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+.logo {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2rem; /* Ajusta el tamaño según necesites */
+    font-weight: 400;
+    color: rgb(172, 131, 77); /* Cambia según el fondo de tu header */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 3rem;
+}
