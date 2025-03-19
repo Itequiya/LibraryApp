@@ -13,6 +13,7 @@
     background-color: #eef4df ;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 0 20px;
+    z-index: 1000; 
   }
   .nav {
     display: flex;
@@ -21,11 +22,11 @@
   }
   
   .nav-list {
-    list-style: none;
+    list-style: none; 
     display: flex;
     gap: 3rem;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 2px;
   }
   
   .nav-list li {
@@ -46,10 +47,11 @@
 
   .search-container {
     margin-left: 60rem; /* Espacio entre la búsqueda y los elementos de la nav */
+    padding-bottom: 5px;
   }
   
   .search-input {
-    padding: 8px 15px;
+    padding: 6px 15px;
     font-size: 1rem;
     border: 1px solid #e9dbc7;
     border-radius: 10px;
