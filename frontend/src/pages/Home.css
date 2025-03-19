@@ -1,6 +1,6 @@
 /* Contenedor principal del slider */
 body {
-    background-color: #a7b989;  
+    background-color: #ffffff;  
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,11 +9,10 @@ body {
 .slider-container {
     position: relative;
     width: 80%;
-    max-width: 75 rem;  /* tamaño máximo del slider */
+    max-width: 60rem;  /* tamaño máximo del slider */
     margin: 80px auto 0;
     overflow: hidden;
     background-color: #f8faf5;  /* Color de fondo del slider */
-    border-radius: 0px;  /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(37, 37, 37, 0.2);  /* Sombra suave para el slider */
   }
   
@@ -69,4 +68,42 @@ body {
     button {
       font-size: 1.5rem; /* Ajusta el tamaño de los botones en pantallas pequeñas */
     }
+  }
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 3rem 0;
+    justify-content: center; 
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: "";
+    flex: 0.4;
+    border-bottom: 2px solid #000;
+    margin: 0 7rem;
+  }
+  
+  .separator span {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  iframe {
+    width: 40rem;
+    height: 40rem;
+    border: 0;
+    margin: 1rem 6rem;
+    filter: grayscale(100%);
   }

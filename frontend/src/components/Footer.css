@@ -1,5 +1,5 @@
 .footer {
-    background-color: #ffffff;  /* Fondo  */
+    background-color: #f3f3f3;  /* Fondo  */
     color: #50573a;            /* Texto  */
     padding: 20px 0;         /* Espaciado alrededor */
     text-align: center;      /* Centrado de texto */
@@ -10,11 +10,19 @@
   
   /* Contenedor dentro del footer */
   .footer-content {
+    color: #50573a; 
     max-width: 1200px;       /* Ancho máximo */
     margin: 0 auto;          /* Centrado horizontal */
     padding: 0 20px;         /* Espaciado dentro */
   }
-  
+  a {
+    color: #50573a; /* Cambia el color aquí */
+    text-decoration: none; /* Sin subrayado */
+  }
+  a:hover {
+    color: #000000; /* Color cuando se pasa el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+  }
   /* Enlaces del footer */
   .footer-links {
     margin-top: 10px;        /* Espacio entre el texto y los enlaces */

@@ -10,10 +10,14 @@ const Footer = () => {
       <footer className="footer">
       <div className="footer-content">
         <p>© 2025 Itequiya. Todos los derechos reservados.</p>
+        <p>Contáctanos</p>
+        <a href="mailto:itequiyalibrary@gmail.com">itequiyalibrary@gmail.com</a>
+        
+        <p>Síguenos</p>
         <div className="footer-links">
-          <a href="#facebook">Facebook</a>
-          <a href="#contact">Contacto</a>
-          <a href="#privacy">Política de privacidad</a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.twitter.com"target="_blank" rel="noopener noreferrer" >X</a>
+          <a href="https://www.instagram.com"target="_blank" rel="noopener noreferrer" >Instagram</a>
         </div>
 
          {/* Redes sociales con imágenes */}
