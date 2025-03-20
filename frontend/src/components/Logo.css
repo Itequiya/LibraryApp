@@ -2,10 +2,19 @@
 
 .logo {
     font-family: 'Julius Sans One', sans-serif;
-    font-size: 2rem; /* Ajusta el tamaño según necesites */
+    font-size: 2rem; 
     font-weight: 400;
-    color: rgb(172, 131, 77); /* Cambia según el fondo de tu header */
+    color: rgb(172, 131, 77); 
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-left: 3rem;
+    text-decoration: none;
+}
+a :hover {
+    text-decoration: none;
+}
+a.logo:focus,
+a.logo:active,
+a.logo:hover {
+    text-decoration: none; 
 }

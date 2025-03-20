@@ -1,0 +1,111 @@
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+}
+
+
+.main-content {
+  flex: 1;
+}
+
+.book-container {
+  max-width: 78rem;
+  margin: 20px auto;
+  text-align: center;
+}
+.search-container-table {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    margin-top: 4rem;
+    width: 100%;
+  }
+  
+  .search-container-table input {
+    padding: 10px;
+    width: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .search-container-table select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem;
+  justify-content: flex-start;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  vertical-align: middle; 
+}
+
+th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: #ddd;
+}
+
+#editBookBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+    display: inline-block; 
+  }
+  
+  #editBookBtn i {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  #editBookBtn i:hover {
+    color: #7c9e3e;
+  }
+  
+#deleteBookBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+    display: inline-block; 
+  }
+  
+  #deleteBookBtn i {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  #deleteBookBtn i:hover {
+    color: #7c9e3e;
+  }
+
+  td {
+    text-align: center; 
+    width: 100px; 
+  }
+  
+  td button {
+    padding: 5px;
+    width: 30px;
+    height: 30px; 
+  }

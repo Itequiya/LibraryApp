@@ -1,4 +1,16 @@
-/* Contenedor principal del slider */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+}
+
+
+.main-content {
+  flex: 1;
+}
 body {
     background-color: #ffffff;  
     font-family: Arial, sans-serif;
@@ -9,64 +21,77 @@ body {
 .slider-container {
     position: relative;
     width: 80%;
-    max-width: 60rem;  /* tamaño máximo del slider */
+    max-width: 60rem;  
     margin: 80px auto 0;
     overflow: hidden;
-    background-color: #f8faf5;  /* Color de fondo del slider */
-    box-shadow: 0 4px 8px rgba(37, 37, 37, 0.2);  /* Sombra suave para el slider */
+    background-color: #f8faf5; 
+    box-shadow: 0 4px 8px rgba(37, 37, 37, 0.2);  
   }
   
-  /* Contenedor donde se encuentra la imagen */
+
   .slider {
     width: 100%;
     position: relative;
   }
   
-  /* Estilo de la imagen dentro del slider */
+  
   .slider-image {
     width: 100%;
     height: auto;
-    display: block; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    display: block; 
   }
   
-  /* Estilo para los botones de navegación */
-  button {
+  
+  #slider-btn-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     border: none;
     font-size: 2rem;
     padding: 10px;
     cursor: pointer;
-    z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
-    transition: background-color 0.3s ease; /* Efecto de transición para el hover */
+    z-index: 10; 
+    transition: background-color 0.3s ease; 
+  }
+  #slider-btn-left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; 
+    transition: background-color 0.3s ease; 
   }
   
-  /* Estilo del botón de la izquierda */
+
   .prev-button {
     left: 10px;
   }
   
-  /* Estilo del botón de la derecha */
+
   .next-button {
     right: 10px;
   }
   
-  /* Efecto hover para los botones */
+ 
   button:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
   
-  /* Responsive para pantallas más pequeñas */
+ 
   @media (max-width: 600px) {
     .slider-container {
       width: 100%;
     }
   
     button {
-      font-size: 1.5rem; /* Ajusta el tamaño de los botones en pantallas pequeñas */
+      font-size: 1.5rem; 
     }
   }
   .separator {

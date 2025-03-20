@@ -6,15 +6,15 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="Header">
-      <Logo />
+      <Link to="/"><Logo></Logo></Link>
       <nav className="nav">
         <ul className="nav-list">
           <li><Link to="/books">Books</Link></li>
           <li><Link to="/loans">Loans</Link></li>
-          <li><Link to="/user">User</Link></li>
+          <li><Link to="/users">User</Link></li>
           <li><Link to="/libraries">Libraries</Link></li>
         </ul>
-        {/* Barra de búsqueda añadida */}
+       
         <div className="search-container">
         <input
           type="search"

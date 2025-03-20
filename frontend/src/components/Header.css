@@ -1,7 +1,7 @@
 
 .Header {
     position: fixed;
-    top: 0; /* Stick it to the top */
+    top: 0; 
     max-height: 70px;
     width: 100vw;
   
@@ -9,7 +9,7 @@
     grid-template-areas: "logo nav";
     grid-template-columns: auto 1fr;
     align-items: center;
-    /* Cosmetics */
+
     background-color: #eef4df ;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 0 20px;
@@ -46,7 +46,7 @@
   }
 
   .search-container {
-    margin-left: 60rem; /* Espacio entre la búsqueda y los elementos de la nav */
+    margin-left: 60rem; 
     padding-bottom: 5px;
   }
   
