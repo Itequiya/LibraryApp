@@ -9,8 +9,24 @@ html, body {
   flex: 1;
 }
 
-.book-container {
+.books-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   max-width: 78rem;
   margin: 20px auto;
   text-align: center;
+  padding-bottom: 80px;
+}
+
+.btn-create-book{
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+  background-color: #eef4df;
+  border: #bcc99f;
+  border-radius: 5px;
 }
